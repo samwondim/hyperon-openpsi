@@ -156,7 +156,7 @@
     let $output (getRuleType $id)
     (
      if(== $output (%Undefined%))
-      (let $_ (: $id (TTV $timestamp $tv)))
+      (let $_ (add-atom &psiRules (: $id (TTV $timestamp $tv))))
       (
        case $output 
         (
@@ -190,3 +190,6 @@
 
 !(getContext Rule1)
 !(getContext rule1)
+
+!(setTV rule1 2 (STV 1.0 1.0))
+!(getTV rule1)
